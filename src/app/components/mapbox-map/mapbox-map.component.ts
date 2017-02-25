@@ -15,9 +15,9 @@ export class MapboxMapComponent implements OnInit {
   ngOnInit() {
        let map = new Map({
       container: 'divMapboxMap',
-      style: this.mapconfig.style,
-      zoom: this.mapconfig.zoom,
-      center: [this.mapconfig.longitude,this.mapconfig.latitude]
+      style: this.mapconfig.getStyle(),
+      zoom: this.mapconfig.getZoom(),
+      center: [this.mapconfig.getLng(), this.mapconfig.getLat()]
     });
     this.mapService.map = map;
   }
